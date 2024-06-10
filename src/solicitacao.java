@@ -14,7 +14,7 @@ public class solicitacao {
 	   
 	   //contrutores
 	   public solicitacao() {
-		   agendado = new SimpleDateFormat("d/M/y");
+		   agendado = new SimpleDateFormat("d MMM y - h:mm a ");
 	   }
 	   
 	   //para mostrar a data e hora certinho

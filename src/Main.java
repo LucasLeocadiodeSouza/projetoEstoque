@@ -57,16 +57,16 @@ public class Main {
        solicitacao3.setPendencia(true);
        estoque.adicionarSolicitacao(solicitacao3);
       
-       
-        for(int j = 0; j < estoque.tamanhoSolicitacao(); j++){
-           if(estoque.verSolicitacao(j).isPendencia()){
+    
+       for(int j = 0; j < estoque.tamanhoSolicitacao(); j++){
+          if(estoque.verSolicitacao(j).isPendencia()){
                System.out.println("Modelo: " + estoque.verSolicitacao(j).getDiu().getModel());
                System.out.println("Numero de protocolo: " + estoque.verSolicitacao(j).getSenha());
                System.out.println("Paciente: " + estoque.verSolicitacao(j).getNomePac());
                System.out.println("Medico: " + estoque.verSolicitacao(j).getNomeMed());
                System.out.println("Local: " + estoque.verSolicitacao(j).getLocal());
                System.out.println("Data e hora: " + estoque.verSolicitacao(j).toString());
-           }
+          }
            System.out.println(" ");
         } 
 		
