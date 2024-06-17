@@ -1,3 +1,4 @@
+package Diu;
 
 public class diu {
 	    
@@ -27,6 +28,5 @@ public class diu {
 
 	    public void setLote(String lote) {
 	        this.lote = lote;
-	    
 	    }
 }
