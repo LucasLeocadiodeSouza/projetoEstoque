@@ -2,9 +2,10 @@ package materiais;
 
 public class SolicitacaoMaterial extends Material {
 
-	private String setorSolicitante;
-	private String setorRequerente;
-	private int quantidadeSolicitada;
+	protected String setorSolicitante;
+	protected String setorRequerente;
+	protected static int quantidadeSolicitada;
+	protected boolean pendencia;
 	
 	public SolicitacaoMaterial(String produto, Integer quantidade, String setorRequerente, String setorSolicitante, int quantidadeSolicitada) {
 		super(produto, quantidade);
@@ -29,14 +30,20 @@ public class SolicitacaoMaterial extends Material {
 		this.setorRequerente = setorRequerente;
 	}
 
-	public int getQuantidadeSolicitada() {
+	public static int getQuantidadeSolicitada() {
 		return quantidadeSolicitada;
 	}
 
-	public void setQuantidadeSolicitada(int quantidadeSolicitada) {
-		this.quantidadeSolicitada = quantidadeSolicitada;
+	public static void setQuantidadeSolicitada(int quantidadeSolicitada) {
+		SolicitacaoMaterial.quantidadeSolicitada = quantidadeSolicitada;
 	}
 
-	
+	public boolean isPendencia() {
+		return pendencia;
+	}
+
+	public void setPendencia(boolean pendencia) {
+		this.pendencia = pendencia;
+	}
 	
 }

@@ -7,12 +7,13 @@ import materiais.Materiais;
 public class EstoqueMateriais {
 	
    private ArrayList<Material> materiais;
+   private ArrayList<SolicitacaoMaterial> solicitacoes;
    
-   public estoque(){
+   public EstoqueMateriais(){
        materiais = new ArrayList<Material>();
    }
 	
-   // Metodos para os Materiais
+   // Metodos para as solicitacoes
    public void adicionarMaterial(Material material) {
 	   materiais.add(material);
    }
@@ -22,8 +23,16 @@ public class EstoqueMateriais {
    public Material verMaterial(int posicao) {
 	   return materiais.get(posicao);
    }
-   public void entregaSolicitacao(int Quantidade) {
-	   
+   
+   //metodos para solicitacoes
+   public void fazerSolicitacao(SolicitacaoMaterial SolicitacaoMaterial) {
+	   solicitacoes.add(SolicitacaoMaterial);
+   }
+   public void baixaSolicitacao() {
+		   Material.quantidade -= SolicitacaoMaterial.quantidadeSolicitada;   
+   }
+   public SolicitacaoMaterial verSolicitacoes(int posicao) {
+	   return solicitacoes.get(posicao);
    }
    
    
