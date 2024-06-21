@@ -1,9 +1,10 @@
 import Diu.EstoqueDiu;
+
 import Diu.diu;
 import Diu.solicitacao;
-import materiais.Materiais;
-import materiais.MateriaisEscritorio;
+import materiais.EstoqueMateriais;
 import materiais.Material;
+import materiais.Tipo;
 
 public class Main {
 
@@ -77,10 +78,16 @@ public class Main {
            System.out.println(" ");
         } */
        
-       
-       Material canetaPreta = new Material("Caneta Preta", 26);
-       Material canetaAzul = new Material("Caneta Azul", 12);
-       
+       Material canetaPreta = new Material();
+       Tipo materialExp = new Tipo();
+       EstoqueMateriais estoqueMat1 = new EstoqueMateriais();
+       estoqueMat1.setQuantidade(28);
+       materialExp.setNome("Material Expedicao");
+       canetaPreta.setNome("Caneta Preta");
+       canetaPreta.setTipo(materialExp);
+       canetaPreta.setEstoqueMateriais(estoqueMat1);
+       estoqueMat1.addMatEst(canetaPreta);
+       materialExp.addMaterial(canetaPreta);
        
 	}
 	

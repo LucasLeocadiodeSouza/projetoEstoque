@@ -1,20 +1,48 @@
 package materiais;
 
+import java.util.ArrayList;
+
+import Fornecedores.Fornecedor;
 
 public class Material {
 	
-	protected String produto;
-	protected static Integer quantidade;
+	private String nome;
+	private Tipo tipo;
+	private EstoqueMateriais estoqueMateriais;
 	
-	public Material(String produto, Integer quantidade) {
-		this.produto = produto;
-		this.quantidade = quantidade;
+	private ArrayList<SolicitacaoMaterial> solicitacaoMateriais;
+	
+	public Material() {
+		solicitacaoMateriais = new ArrayList<SolicitacaoMaterial>();
+	}
+		
+	// Metodos para o private
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public Tipo getTipo() {
+		return tipo;
+	}
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}	
+	public EstoqueMateriais getEstoqueMateriais() {
+		return estoqueMateriais;
+	}
+	public void setEstoqueMateriais(EstoqueMateriais estoqueMateriais) {
+		this.estoqueMateriais = estoqueMateriais;
 	}
 
-	@Override
-	public String toString() {
-		return "Material: " + produto + ", " + quantidade;
-	}
 	
+	// Metodos para classe Material
+	public void addMat(SolicitacaoMaterial solicitacao) {
+		solicitacaoMateriais.add(solicitacao);
+	}
+	public void removerMat(SolicitacaoMaterial solicitacao) {
+		solicitacaoMateriais.remove(solicitacao);
+	}
 	
 }

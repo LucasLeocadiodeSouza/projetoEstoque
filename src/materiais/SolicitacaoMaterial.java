@@ -1,49 +1,57 @@
 package materiais;
 
-public class SolicitacaoMaterial extends Material {
+import java.util.ArrayList;
 
-	protected String setorSolicitante;
-	protected String setorRequerente;
-	protected static int quantidadeSolicitada;
-	protected boolean pendencia;
+public class SolicitacaoMaterial{
+
+	private String setorSolicitante;
+	private String nomeSolicitante;
+	private String setorRequerente;
+	private int quantidadeSolicitada;
+	private EstoqueMateriais estoqueMaterial;
 	
-	public SolicitacaoMaterial(String produto, Integer quantidade, String setorRequerente, String setorSolicitante, int quantidadeSolicitada) {
-		super(produto, quantidade);
-		this.setorRequerente = setorRequerente;
-		this.setorSolicitante = setorSolicitante;
-		this.quantidadeSolicitada = quantidadeSolicitada;
+	private ArrayList<Material> materiais;
+	
+	public SolicitacaoMaterial() {
+		materiais = new ArrayList<Material>();
 	}
-
+	
+	// Metodos para private
 	public String getSetorSolicitante() {
 		return setorSolicitante;
 	}
-
 	public void setSetorSolicitante(String setorSolicitante) {
 		this.setorSolicitante = setorSolicitante;
 	}
-
+	public String getNomeSolicitante() {
+		return nomeSolicitante;
+	}
+	public void setNomeSolicitante(String nomeSolicitante) {
+		this.nomeSolicitante = nomeSolicitante;
+	}
 	public String getSetorRequerente() {
 		return setorRequerente;
 	}
-
 	public void setSetorRequerente(String setorRequerente) {
 		this.setorRequerente = setorRequerente;
 	}
-
-	public static int getQuantidadeSolicitada() {
+	public int getQuantidadeSolicitada() {
 		return quantidadeSolicitada;
 	}
-
-	public static void setQuantidadeSolicitada(int quantidadeSolicitada) {
-		SolicitacaoMaterial.quantidadeSolicitada = quantidadeSolicitada;
+	public void setQuantidadeSolicitada(int quantidadeSolicitada) {
+		this.quantidadeSolicitada = quantidadeSolicitada;
+	}
+	public EstoqueMateriais getEstoqueMaterial() {
+		return estoqueMaterial;
+	}
+	public void setEstoqueMaterial(EstoqueMateriais estoqueMaterial) {
+		this.estoqueMaterial = estoqueMaterial;
 	}
 
-	public boolean isPendencia() {
-		return pendencia;
-	}
-
-	public void setPendencia(boolean pendencia) {
-		this.pendencia = pendencia;
+	
+	// Metodos para classe SolcitacaoMat
+	public void fazerSolicitacao() {
+		
 	}
 	
 }
