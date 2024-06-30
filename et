@@ -1,0 +1,29 @@
+[33mcommit 45574ae9e251f4c4a5711f47abb29e6ad431186e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Lucas Leocadio <vanildo1511@gmail.com>
+Date:   Thu Jun 20 22:55:51 2024 -0300
+
+    to refazendo o pacote de materiais geral usando um diagrama agora pq me perdi antes e tava muito confuso ent vamos ver agr
+
+[33mcommit 286ca3159a4141ce16cd79a1562b2e30135e368f[m
+Author: Lucas Leocadio <vanildo1511@gmail.com>
+Date:   Sun Jun 16 23:14:06 2024 -0300
+
+    fiz alteracoes no estoque e solocitacao de materiais mas falta achar um jeito melhor de colocar os dados na solicitacao pelo main
+
+[33mcommit 5a44533b967f534bc5823bea21945cd44bc39203[m
+Author: Lucas Leocadio <vanildo1511@gmail.com>
+Date:   Sun Jun 16 22:30:17 2024 -0300
+
+    reorganizei e separei em pacotes de Diu e de materiais (esse a qual criei dps), o pacote de diu ta tudo certo mas dai to tentando fazer o estoque materias descontar a quantiadade pedida na solicitacao com o do estoque
+
+[33mcommit b5bcadc653f73648574ce6e5989504033673a6b7[m
+Author: Lucas Leocadio <vanildo1511@gmail.com>
+Date:   Sun Jun 9 23:39:49 2024 -0300
+
+    alterado o modelo data e hora pra melhor entendimento
+
+[33mcommit 159332faa18c84a0bba7cf164ea98dbb205ebe9a[m
+Author: Lucas Leocadio <vanildo1511@gmail.com>
+Date:   Sat Jun 8 23:44:22 2024 -0300
+
+    criado projeto estoque de diu e sucesso

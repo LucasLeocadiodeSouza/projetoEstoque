@@ -2,8 +2,6 @@ package materiais;
 
 import java.util.ArrayList;
 
-import Fornecedores.Fornecedor;
-
 public class Material {
 	
 	private String nome;
@@ -36,7 +34,7 @@ public class Material {
 		this.estoqueMateriais = estoqueMateriais;
 	}
 
-	
+
 	// Metodos para classe Material
 	public void addMat(SolicitacaoMaterial solicitacao) {
 		solicitacaoMateriais.add(solicitacao);

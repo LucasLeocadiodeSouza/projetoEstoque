@@ -1,14 +1,14 @@
-import Diu.EstoqueDiu;
+import java.util.Scanner;
 
-import Diu.diu;
-import Diu.solicitacao;
 import materiais.EstoqueMateriais;
 import materiais.Material;
-import materiais.Tipo;
+import javax.swing.JOptionPane;
 
 public class Main {
 
 	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
 		
        /* EstoqueDiu estoqueDiu = new EstoqueDiu();
        diu mirena = new diu();
@@ -78,18 +78,44 @@ public class Main {
            System.out.println(" ");
         } */
        
-       Material canetaPreta = new Material();
-       Tipo materialExp = new Tipo();
-       EstoqueMateriais estoqueMat1 = new EstoqueMateriais();
-       estoqueMat1.setQuantidade(28);
-       materialExp.setNome("Material Expedicao");
-       canetaPreta.setNome("Caneta Preta");
-       canetaPreta.setTipo(materialExp);
-       canetaPreta.setEstoqueMateriais(estoqueMat1);
-       estoqueMat1.addMatEst(canetaPreta);
-       materialExp.addMaterial(canetaPreta);
-       
+		String sair = "a";
+		do {
+		   Material material = new Material();
+		   
+		   String nomeMaterial = JOptionPane.showInputDialog("Material a ser adicionado: ");
+		   JOptionPane.showMessageDialog(null
+				   ,"digitado: " + nomeMaterial);
+		   
+		   material.setNome(nomeMaterial);
+		   material.setTipo(null);
+		   
+		   EstoqueMateriais estoquemateriais = new EstoqueMateriais();
+		   
+		   material.setEstoqueMateriais(estoquemateriais);
+		   estoquemateriais.addMatEst(material);
+		   String quantity = JOptionPane.showInputDialog("Quantidade de " + material.getNome() + " em estoque?  ");
+		   try {
+			   int iQuantity = Integer.parseInt(quantity);
+			   estoquemateriais.setQuantidade(iQuantity);
+			   JOptionPane.showMessageDialog(null,"digitado: " + iQuantity);
+			   
+			   
+	        } catch (NumberFormatException e) {
+	        	if(quantity == null || quantity.trim().isEmpty()) {
+	        		JOptionPane.showMessageDialog(null,"Cadastrado ");
+	        	}else {
+	        		JOptionPane.showMessageDialog(null, "Quantidade Invalida. Por Favor tente novamente");
+	        	}
+	        	break;
+	        }
+		   
+		}
+       while(!sair.isEmpty());
+       sc.close();
+
+	
+	
+	
+	
 	}
-	
-	
 }
