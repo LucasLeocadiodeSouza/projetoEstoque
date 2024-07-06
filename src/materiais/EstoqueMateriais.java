@@ -29,6 +29,12 @@ public final class EstoqueMateriais {
 	public void removeMatEst(Material material) {
 		materiais.remove(material);
 	}
+	public Material verMat(int posicao) {
+		return materiais.get(posicao);
+	}
+	public int lenghtMat() {
+		return materiais.size();
+	}
 	public void addSolicitacao(SolicitacaoMaterial SolicitacaoMaterial) {
 		solicitacoes.add(SolicitacaoMaterial);
 	}

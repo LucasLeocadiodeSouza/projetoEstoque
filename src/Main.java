@@ -2,13 +2,12 @@ import java.util.Scanner;
 
 import materiais.EstoqueMateriais;
 import materiais.Material;
-import javax.swing.JOptionPane;
+import materiais.SolicitacaoMaterial;
+import materiais.Tipo;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
 		
        /* EstoqueDiu estoqueDiu = new EstoqueDiu();
        diu mirena = new diu();
@@ -78,17 +77,15 @@ public class Main {
            System.out.println(" ");
         } */
        
-		String sair = "a";
+		/* String sair = "a";
 		do {
 		   Material material = new Material();
 		   
 		   String nomeMaterial = JOptionPane.showInputDialog("Material a ser adicionado: ");
-		   JOptionPane.showMessageDialog(null
-				   ,"digitado: " + nomeMaterial);
+		   JOptionPane.showMessageDialog(null,"digitado: " + nomeMaterial, "APAIXONADOPORRUIVASVINHO", JOptionPane.DEFAULT_OPTION);
 		   
 		   material.setNome(nomeMaterial);
 		   material.setTipo(null);
-		   
 		   EstoqueMateriais estoquemateriais = new EstoqueMateriais();
 		   
 		   material.setEstoqueMateriais(estoquemateriais);
@@ -97,14 +94,14 @@ public class Main {
 		   try {
 			   int iQuantity = Integer.parseInt(quantity);
 			   estoquemateriais.setQuantidade(iQuantity);
-			   JOptionPane.showMessageDialog(null,"digitado: " + iQuantity);
+			   JOptionPane.showMessageDialog(null,"digitado: " + iQuantity, "APAIXONADOPORRUIVASVINHO", JOptionPane.DEFAULT_OPTION);
 			   
 			   
 	        } catch (NumberFormatException e) {
 	        	if(quantity == null || quantity.trim().isEmpty()) {
-	        		JOptionPane.showMessageDialog(null,"Cadastrado ");
+	        		JOptionPane.showMessageDialog(null,"Cadastrado ", "APAIXONADOPORRUIVASVINHO", JOptionPane.DEFAULT_OPTION);
 	        	}else {
-	        		JOptionPane.showMessageDialog(null, "Quantidade Invalida. Por Favor tente novamente");
+	        		JOptionPane.showMessageDialog(null, "Quantidade Invalida. Por Favor tente novamente", "APAIXONADOPORRUIVASVINHO", JOptionPane.DEFAULT_OPTION);
 	        	}
 	        	break;
 	        }
@@ -112,10 +109,54 @@ public class Main {
 		}
        while(!sair.isEmpty());
        sc.close();
-
-	
-	
-	
-	
+       */
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//gravando os construtores 
+			EstoqueMateriais estoqueMat = new EstoqueMateriais();
+			Tipo tipoMat = new Tipo();
+			Material material = new Material();
+			SolicitacaoMaterial solicitacaoMaterial = new SolicitacaoMaterial();
+			
+		String sair = null;
+		do {
+			//gravando o tipo de material			
+			String tipo = sc.nextLine();
+			tipoMat.setNome(tipo);
+			
+			//gravando o material
+			
+			String nomeMaterial = sc.nextLine();
+			material.setNome(nomeMaterial);
+			material.setEstoqueMateriais(estoqueMat);
+			material.setTipo(tipoMat);
+			
+			//gravando material no estoque
+			Integer quantity = sc.nextInt();
+			estoqueMat.setQuantidade(quantity);
+			estoqueMat.addMatEst(material);
+				
+			//adicionando as ArrayLists
+			tipoMat.addMaterial(material);
+			
+			
+			System.out.println("deseja sair?");
+			sair = sc.nextLine();
+		}while(!sair.contentEquals("sair"));
+		
+		String acao = sc.nextLine();
+		System.out.println("acoes: ");
+		System.out.println("ver materiais em estoque");
+		System.out.println("solicitacao de materiais");
+		if(!acao.contentEquals("ver materiais em estoque")) {
+			for(int n = 0; n < estoqueMat.lenghtMat(); n++) {
+				estoqueMat.verMat(n);
+			}
+		}else if (acao.contentEquals("solicitacao de materiais")) {
+			
+		}
+		
+		sc.close();
 	}
 }

@@ -19,6 +19,7 @@ public class Tipo {
 		this.nome = nome;
 	}
 	
+	
 	public void addMaterial(Material material) {
 		materiais.add(material);
 	}
