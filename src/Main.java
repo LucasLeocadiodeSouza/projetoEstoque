@@ -1,7 +1,6 @@
 import java.util.Scanner;
-import materiais.EstoqueMateriais;
-import materiais.Material;
-import materiais.Tipo;
+
+import frames.HomeWindow;
 
 public class Main {
 
@@ -59,6 +58,7 @@ public class Main {
 		}
 		*/
 		
+		HomeWindow homewindow = new HomeWindow();
 		
 		sc.close();
 	}
