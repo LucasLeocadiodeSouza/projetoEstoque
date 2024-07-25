@@ -43,6 +43,7 @@ import javax.swing.JPanel;
 			home.setSize(1000,700);
 			home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			home.setLayout(null);
+			home.getContentPane().setBackground(Color.blue);
 			
 			cadastros = new JButton("cadastros");
 			cadastros.addActionListener(this);
@@ -53,7 +54,7 @@ import javax.swing.JPanel;
 			
 			
 			subBarra = new JPanel();
-			subBarra.setBackground(Color.LIGHT_GRAY);
+			subBarra.setBackground(Color.GRAY);
 			subBarra.add(cadastros);
 			subBarra.setLayout(null);
 			
@@ -64,7 +65,6 @@ import javax.swing.JPanel;
 			barra.add(IconEmp);
 			
 			home.add(barra);
-			
 			home.addComponentListener(new ComponentAdapter(){
 				public void componentResized(ComponentEvent e) {
 					adjustPanelSizes(home);
@@ -94,15 +94,14 @@ import javax.swing.JPanel;
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			
 			localeFrame();
+			
 			
 		}
 		
 		public void localeFrame() {
 			
 			Point locCadastro = cadastros.getLocationOnScreen();
-			
 			CadastrosWindow Cadastros = new CadastrosWindow(locCadastro, cadastros);
 			
 		}
