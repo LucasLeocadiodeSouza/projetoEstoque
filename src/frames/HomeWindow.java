@@ -17,6 +17,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import Diu.frameDiuCadas;
+import materiais.frameMatCadas;
 
 	
 	public class HomeWindow implements ActionListener{
@@ -144,6 +145,8 @@ import Diu.frameDiuCadas;
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource()==cadastrarDiu) {
 				frameDiuCadas framediucadas = new frameDiuCadas();
+			}else if(e.getSource()==cadastrarMaterial) {
+				frameMatCadas framematcadas = new frameMatCadas();
 			}
 		}
 		
