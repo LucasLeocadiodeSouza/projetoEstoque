@@ -1,12 +1,21 @@
 import java.util.Scanner;
-
+import Diu.EstoqueDiu;
+import Diu.diu;
 import frames.HomeWindow;
+import Diu.frameDiuCadas;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
+		
+		
+		HomeWindow homewindow = new HomeWindow();
+		frameDiuCadas framediudadas = new frameDiuCadas();
+		
+		
+		
 		
 		/*
 		//gravando os construtores 
@@ -56,10 +65,12 @@ public class Main {
 		}else if (acao.contentEquals("solicitacao de materiais")) {
 			
 		}
-		*/
 		
-		HomeWindow homewindow = new HomeWindow();
+		
+		
 		
 		sc.close();
+		*/
 	}
 }
+		

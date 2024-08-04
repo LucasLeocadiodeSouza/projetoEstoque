@@ -17,6 +17,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import Diu.frameDiuCadas;
+import Diu.frameEstoqueDiu;
 import materiais.frameMatCadas;
 
 	
@@ -28,6 +29,9 @@ import materiais.frameMatCadas;
 		JMenuItem cadastrarDiu;
 		JMenuItem cadastrarTipo;
 		JMenuItem cadastrarMaterial;
+		JMenuItem inventario;
+		JMenuItem estoqueDiu;
+		JMenuItem estoqueMat;
 		private int alturaSubBarra = 27;
 		
 		
@@ -69,6 +73,8 @@ import materiais.frameMatCadas;
 			
 			//criando e definindo redeas para a barra de menu
 			JMenuBar barraDeMenu = new JMenuBar();
+			barraDeMenu.setOpaque(false);
+			barraDeMenu.setBackground(new Color(0,0,0,0));
 			JMenu cadastro = new JMenu("Cadastros");
 			JMenu movimentacao = new JMenu("Movimentações");
 			JMenu entradas = new JMenu("Entradas");
@@ -78,22 +84,29 @@ import materiais.frameMatCadas;
 			cadastrarMaterial = new JMenuItem("Cadastrar Mat.");
 			
 			
-			
+			inventario = new JMenuItem("Inventario");
+			estoqueDiu = new JMenuItem("Estoque Diu");
+			estoqueMat = new JMenuItem("Estoque Material");
 			
 			
 			//adicionar acao
 			cadastrarDiu.addActionListener(this);
 			cadastrarTipo.addActionListener(this);
 			cadastrarMaterial.addActionListener(this);
+			estoqueDiu.addActionListener(this);
 			
 			
 			
 			cadastro.add(cadastrarDiu);
 			cadastro.add(cadastrarTipo);
 			cadastro.add(cadastrarMaterial);
+			movimentacao.add(inventario);
+			movimentacao.add(estoqueDiu);
+			movimentacao.add(estoqueMat);
 			barraDeMenu.add(cadastro);
 			barraDeMenu.add(movimentacao);
 			barraDeMenu.add(entradas);
+			barraDeMenu.add(kardex);
 			subBarra.add(barraDeMenu, BorderLayout.WEST);
 			
 			
@@ -144,21 +157,16 @@ import materiais.frameMatCadas;
 		
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource()==cadastrarDiu) {
-				frameDiuCadas framediucadas = new frameDiuCadas();
+				frameDiuCadas framediucadas = new frameDiuCadas("Cadastro de Diu");
 			}else if(e.getSource()==cadastrarMaterial) {
 				frameMatCadas framematcadas = new frameMatCadas();
 			}
+			
+			
+			
+			if(e.getSource()==estoqueDiu) {
+				frameEstoqueDiu frameestoquediu = new frameEstoqueDiu();
+			}
 		}
 		
-		
 }
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
