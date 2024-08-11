@@ -54,7 +54,7 @@ import materiais.frameMatCadas;
 			JFrame home = new JFrame();
 			home.setTitle("Prexeco");
 			home.setSize(1000,700);
-			home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			home.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			home.setLayout(null);
 			home.getContentPane().setBackground(Color.blue);
 			

@@ -111,6 +111,9 @@ public class frameDiuCadas implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
+		//fazer um try - catch para quando nao escrever nada nos campos
+		
 		if(e.getSource() == cadastrar) {
 	        diu diu = new diu();
 			diu.setModel(modelTextField.getText());

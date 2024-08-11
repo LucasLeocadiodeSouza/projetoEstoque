@@ -1,8 +1,6 @@
 import java.util.Scanner;
-import Diu.EstoqueDiu;
-import Diu.diu;
-import frames.HomeWindow;
-import Diu.frameDiuCadas;
+
+import frames.desktopSistem;
 
 public class Main {
 
@@ -10,11 +8,7 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		
-		HomeWindow homewindow = new HomeWindow();
-		frameDiuCadas framediudadas = new frameDiuCadas();
-		
-		
+		desktopSistem desktop = new desktopSistem();
 		
 		
 		/*
