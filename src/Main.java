@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+import farmacia.frameMedCadas;
 import frames.desktopSistem;
 
 public class Main {
@@ -8,8 +9,9 @@ public class Main {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		desktopSistem desktop = new desktopSistem();
+		//desktopSistem desktop = new desktopSistem();
 		
+		frameMedCadas framematcadas = new frameMedCadas();
 		
 		/*
 		//gravando os construtores 

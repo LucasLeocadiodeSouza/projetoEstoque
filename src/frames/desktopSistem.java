@@ -85,9 +85,10 @@ public class desktopSistem implements ActionListener{
 		if(e.getSource() == fechar) {
 			frame.dispose();
 		}else if(e.getSource() == almoxarifado){
-			HomeWindow homeAlmoxarifado = new HomeWindow();
+			almoWindow almoxarifado = new almoWindow();
 		}else if(e.getSource() == farmacia) {
 			//frame para cadastro  e  estoque de medicamentos
+			farmWindow farmacia = new farmWindow();
 		}
 	}
 	

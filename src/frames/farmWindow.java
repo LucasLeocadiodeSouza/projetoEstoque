@@ -1,6 +1,5 @@
 package frames;
-
-	import java.awt.BorderLayout;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -18,25 +17,25 @@ import javax.swing.JPanel;
 
 import Diu.frameDiuCadas;
 import Diu.frameEstoqueDiu;
-import materiais.frameMatCadas;
+import farmacia.frameMedCadas;
 
 	
-	public class HomeWindow implements ActionListener{
+	public class farmWindow implements ActionListener{
 	
 		JPanel subBarra;
 		JPanel barra;
 		JLabel IconEmp;
 		JMenuItem cadastrarDiu;
-		JMenuItem cadastrarTipo;
-		JMenuItem cadastrarMaterial;
+		JMenuItem cadastrarMed;
 		JMenuItem inventario;
 		JMenuItem estoqueDiu;
-		JMenuItem estoqueMat;
+		JMenuItem estoqueMed;
+		JMenuItem consultas;
 		private int alturaSubBarra = 27;
 		
 		
 		
-		public HomeWindow(){
+		public farmWindow(){
 			
 			ImageIcon imagemOriginal = new ImageIcon("C://Users//vanil//Downloads//IconWindows-removebg-preview.png//");
 			
@@ -52,13 +51,11 @@ import materiais.frameMatCadas;
 			
 			
 			JFrame home = new JFrame();
-			home.setTitle("Prexeco");
+			home.setTitle("Sistemas * Farmacia");
 			home.setSize(1000,700);
 			home.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 			home.setLayout(null);
 			home.getContentPane().setBackground(Color.blue);
-			
-			
 			
 			
 			
@@ -75,38 +72,39 @@ import materiais.frameMatCadas;
 			JMenuBar barraDeMenu = new JMenuBar();
 			barraDeMenu.setOpaque(false);
 			barraDeMenu.setBackground(new Color(0,0,0,0));
-			JMenu cadastro = new JMenu("Cadastros");
-			JMenu movimentacao = new JMenu("Movimentações");
-			JMenu entradas = new JMenu("Entradas");
-			JMenu kardex = new JMenu("Relatorios");
+			JMenu mCadastro = new JMenu("Cadastros");
+			JMenu mMovimentacao = new JMenu("Movimentações");
+			JMenu mEntradas = new JMenu("Entradas");
+			JMenu mKardex = new JMenu("Relatorios");
+			JMenu mConsulta = new JMenu("Consultas");
 			cadastrarDiu = new JMenuItem("Cadastrar Diu");
-			cadastrarTipo = new JMenuItem("Cadastrar Tipo");
-			cadastrarMaterial = new JMenuItem("Cadastrar Mat.");
+			cadastrarMed = new JMenuItem("Cadastrar Medicamentos");
 			
 			
 			inventario = new JMenuItem("Inventario");
 			estoqueDiu = new JMenuItem("Estoque Diu");
-			estoqueMat = new JMenuItem("Estoque Material");
+			estoqueMed = new JMenuItem("Estoque Medicamentos");
+			consultas = new JMenuItem("Agendamento de Diu");
 			
 			
 			//adicionar acao
 			cadastrarDiu.addActionListener(this);
-			cadastrarTipo.addActionListener(this);
-			cadastrarMaterial.addActionListener(this);
+			cadastrarMed.addActionListener(this);
 			estoqueDiu.addActionListener(this);
 			
 			
 			
-			cadastro.add(cadastrarDiu);
-			cadastro.add(cadastrarTipo);
-			cadastro.add(cadastrarMaterial);
-			movimentacao.add(inventario);
-			movimentacao.add(estoqueDiu);
-			movimentacao.add(estoqueMat);
-			barraDeMenu.add(cadastro);
-			barraDeMenu.add(movimentacao);
-			barraDeMenu.add(entradas);
-			barraDeMenu.add(kardex);
+			mCadastro.add(cadastrarDiu);
+			mCadastro.add(cadastrarMed);
+			mMovimentacao.add(inventario);
+			mMovimentacao.add(estoqueDiu);
+			mMovimentacao.add(estoqueMed);
+			mConsulta.add(consultas);
+			barraDeMenu.add(mCadastro);
+			barraDeMenu.add(mMovimentacao);
+			barraDeMenu.add(mEntradas);
+			barraDeMenu.add(mConsulta);
+			barraDeMenu.add(mKardex);
 			subBarra.add(barraDeMenu, BorderLayout.WEST);
 			
 			
@@ -158,8 +156,8 @@ import materiais.frameMatCadas;
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource()==cadastrarDiu) {
 				frameDiuCadas framediucadas = new frameDiuCadas("Cadastro de Diu");
-			}else if(e.getSource()==cadastrarMaterial) {
-				frameMatCadas framematcadas = new frameMatCadas();
+			}else if(e.getSource()==cadastrarMed) {
+				frameMedCadas framematcadas = new frameMedCadas();
 			}
 			
 			
